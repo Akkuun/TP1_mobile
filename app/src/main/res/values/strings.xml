@@ -7,5 +7,11 @@
     <string name="email">Entrez votre adresse email</string>
     <string name="competence">Entrez votre compétence</string>
     <string name="valider">Valider</string>
+    <string name="ageLabel">Age</string>
+    <string name="nomLabel">Nom</string>
+    <string name="prenomLabel">Prénom</string>
+    <string name="telephoneLabel">Téléphone</string>
+    <string name="emailLabel">Email</string>
+    <string name="competenceLabel">Compétence</string>
 
 </resources>
