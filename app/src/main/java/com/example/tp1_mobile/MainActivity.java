@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView skillLabel;
     private TextView phoneLabel;
     private TextView validateLabel;
-
+    private  Button changeColorButton;
 
 
     private boolean FrenchSelected = true;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ageEditText = findViewById(R.id.age);
         skillEditText = findViewById(R.id.skill);
         phoneEditText = findViewById(R.id.phone);
-        validateButton = findViewById(R.id.button);
+
 
         //init label -> get all id
         // Initialize labels
@@ -57,6 +58,26 @@ public class MainActivity extends AppCompatActivity {
         ageLabel = findViewById(R.id.AgeLabelID);
         skillLabel = findViewById(R.id.SkillLabelID);
         phoneLabel = findViewById(R.id.PhoneLabelID);
+
+        //init button -> get id
+        validateButton = findViewById(R.id.button);
+        changeColorButton = findViewById(R.id.ChangeColor);
+
+
+        changeColorButton.setOnClickListener(v -> {
+            //loop of all text label and change their background color by a random color located in the colors.xml file
+            //all the color from the color ressources
+            int[] colors = {R.color.red, R.color.green, R.color.blue, R.color.yellow, R.color.purple, R.color.orange, R.color.pink, R.color.brown, R.color.gray, R.color.black};
+            //all the label of the view
+            TextView[] labels = {nameLabel, firstNameLabel, ageLabel, skillLabel, phoneLabel};
+            for (TextView label : labels) {
+                //get a random int [0, colors.length[
+                int randomColor = colors[(int) (Math.random() * colors.length)];
+                // need the ContextCompat to get the color from the ressources
+                label.setBackgroundColor(ContextCompat.getColor(this, randomColor));
+            }
+
+        });
 
 
 
@@ -79,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                 ageLabel.setText(getString(R.string.ageLabel));
                 skillLabel.setText(getString(R.string.competenceLabel));
                 phoneLabel.setText(getString(R.string.telephoneLabel));
+                //button
                 validateButton.setText(getString(R.string.valider));
+                changeColorButton.setText(getString(R.string.changerCouleur));
             } else {
                 //it's english
                 //text fileds and button
@@ -95,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
                 ageLabel.setText(getString(R.string.ageLabel_en));
                 skillLabel.setText(getString(R.string.skillLabel_en));
                 phoneLabel.setText(getString(R.string.phoneLabel_en));
+                //button
                 validateButton.setText(getString(R.string.validate_en));
-
+                changeColorButton.setText(getString(R.string.changeColor_en));
             }
         });
 

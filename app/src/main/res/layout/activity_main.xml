@@ -78,18 +78,21 @@
             android:ems="10"
             android:hint="@string/telephone"
             android:inputType="phone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/skill" />
+            app:layout_constraintTop_toBottomOf="@+id/skill"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="78dp"
+            android:layout_marginTop="76dp"
             android:text="@string/valider"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/phone" />
 
@@ -189,6 +192,18 @@
             app:layout_constraintStart_toEndOf="@+id/switchLangage"
             app:layout_constraintTop_toTopOf="@+id/switchLangage"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/ChangeColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="76dp"
+            android:text="@string/changerCouleur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

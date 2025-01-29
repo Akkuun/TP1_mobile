@@ -13,5 +13,6 @@
     <string name="telephoneLabel">Téléphone</string>
     <string name="emailLabel">Email</string>
     <string name="competenceLabel">Compétence</string>
+    <string name="changerCouleur">Changer la couleur</string>
 
 </resources>
