@@ -37,15 +37,9 @@ public class DetailsActivity extends AppCompatActivity {
 
         // Get data from intent
         Bundle extras = getIntent().getExtras();
-
-        //get language
-
-
         //if the data is not null, set the text of the textview
         if (extras != null) {
-
             FrenchSelected = extras.getBoolean("FrenchSelected");
-
             if(FrenchSelected){
                 detailName.setText("Nom : " + extras.getString("name"));
                 detailFirstName.setText("Prénom : " + extras.getString("firstName"));
