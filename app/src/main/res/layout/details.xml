@@ -82,10 +82,10 @@
             app:layout_constraintVertical_bias="0.547" />
 
         <Button
-            android:id="@+id/ok"
+            android:id="@+id/call"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK"
+            android:text="Call"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

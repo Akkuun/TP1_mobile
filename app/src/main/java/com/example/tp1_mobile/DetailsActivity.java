@@ -16,7 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView detailPhone;
 
     private Button goBack;
-    private Button ok;
+    private Button call;
 
 
 
@@ -36,19 +36,24 @@ public class DetailsActivity extends AppCompatActivity {
 
         //button
         goBack = findViewById(R.id.goBack);
-        ok = findViewById(R.id.ok);
+        call = findViewById(R.id.call);
 
         // Get data from intent
         Bundle extras = getIntent().getExtras();
         //if the data is not null, set the text of the textview
         if (extras != null) {
-            FrenchSelected = extras.getBoolean("FrenchSelected");
+            FrenchSelected =  extras.getBoolean("FrenchSelected", true);
+
+            //log
+            System.out.println("FrenchSelected: " + FrenchSelected);
+
             if(FrenchSelected){
                 detailName.setText("Nom : " + extras.getString("name"));
                 detailFirstName.setText("Prénom : " + extras.getString("firstName"));
                 detailAge.setText("Age : " + extras.getString("age"));
                 detailSkill.setText("Compétence : " + extras.getString("skill"));
                 detailPhone.setText("Téléphone : " + extras.getString("phone"));
+                call.setText("Appeler");
                 goBack.setText("Retour");
             }else{
                 detailName.setText("Name : " + extras.getString("name"));
@@ -57,6 +62,7 @@ public class DetailsActivity extends AppCompatActivity {
                 detailSkill.setText("Skill : " + extras.getString("skill"));
                 detailPhone.setText("Phone : " + extras.getString("phone"));
                 goBack.setText("Go back");
+                call.setText("Call");
 
             }
 
@@ -66,8 +72,9 @@ public class DetailsActivity extends AppCompatActivity {
         findViewById(R.id.goBack).setOnClickListener(v -> finish());
 
         //button for open an another activity
-        ok.setOnClickListener(v -> {
+        call.setOnClickListener(v -> {
             Intent intent = new Intent(DetailsActivity.this, imagePageActivity.class);
+            intent.putExtra("PhoneNumber", detailPhone.getText().toString());
             startActivity(intent);
         });
 

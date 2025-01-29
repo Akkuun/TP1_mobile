@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     //switch to change the language
     private Switch switchLanguage;
 
-    private boolean FrenchSelected;
+    private boolean FrenchSelected = true;
 
     //label
     private TextView nameLabel;
@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         validateButton = findViewById(R.id.button);
         changeColorButton = findViewById(R.id.ChangeColor);
 
+        //log FrenchSelected
+        System.out.println("FrenchSelected: " + FrenchSelected);
+
 
         changeColorButton.setOnClickListener(v -> {
             //loop of all text label and change their background color by a random color located in the colors.xml file
@@ -97,10 +100,12 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
+
         //switch to change the language, we add a listener to change the text of the fields and the button
         switchLanguage = findViewById(R.id.switchLangage);
         switchLanguage.setOnCheckedChangeListener((buttonView, isChecked) -> {
             FrenchSelected = !isChecked;
+            System.out.println("FrenchSelected now : " + FrenchSelected);
             //french is selected
             if (FrenchSelected) {
                 //text fileds and button

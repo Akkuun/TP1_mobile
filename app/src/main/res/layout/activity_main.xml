@@ -173,6 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:text="@string/Fr"
+            android:checked="false"
             app:layout_constraintBottom_toTopOf="@+id/name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
