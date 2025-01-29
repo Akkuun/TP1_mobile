@@ -35,13 +35,14 @@ public class imagePageActivity extends AppCompatActivity {
         //call button
         callButton = findViewById(R.id.callButton);
         callButton.setImageResource(R.drawable.phone_icon);
-
+        //get Intent data (phone number)
         Bundle extras = getIntent().getExtras();
         callButton.setOnClickListener(v -> {
+            //if we get null data, return
             if(extras == null) return;
             //make sure we have the phone number
             phoneNumber = Objects.requireNonNull(Objects.requireNonNull(extras).getString("PhoneNumber")).replace("Téléphone : ", "");
-            Log.d("phone number", phoneNumber);
+            //we make sure we have the permission to call, if not we ask for it
             if (ContextCompat.checkSelfPermission(imagePageActivity.this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(imagePageActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE);
             } else {

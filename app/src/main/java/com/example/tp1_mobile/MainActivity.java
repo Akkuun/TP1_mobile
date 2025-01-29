@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView validateLabel;
     private  Button changeColorButton;
 
+    private Button goToTrainExemple;
+
 
 
 
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         //init button -> get id
         validateButton = findViewById(R.id.button);
         changeColorButton = findViewById(R.id.ChangeColor);
+        goToTrainExemple = findViewById(R.id.train);
 
         //log FrenchSelected
         System.out.println("FrenchSelected: " + FrenchSelected);
@@ -151,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+
+        goToTrainExemple.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, trainExemple.class);
+            startActivity(intent);
         });
     }
 }
