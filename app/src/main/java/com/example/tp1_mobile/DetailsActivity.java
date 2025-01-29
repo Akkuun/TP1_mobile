@@ -1,5 +1,6 @@
 package com.example.tp1_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView detailPhone;
 
     private Button goBack;
+    private Button ok;
 
 
 
@@ -34,6 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         //button
         goBack = findViewById(R.id.goBack);
+        ok = findViewById(R.id.ok);
 
         // Get data from intent
         Bundle extras = getIntent().getExtras();
@@ -61,6 +64,12 @@ public class DetailsActivity extends AppCompatActivity {
 
         //button for go back
         findViewById(R.id.goBack).setOnClickListener(v -> finish());
+
+        //button for open an another activity
+        ok.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailsActivity.this, imagePageActivity.class);
+            startActivity(intent);
+        });
 
     }
 }
