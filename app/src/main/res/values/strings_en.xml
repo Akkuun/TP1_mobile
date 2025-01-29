@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name_en">TP1_Mobil</string>
+    <string name="name_en">Enter your name</string>
+    <string name="age_en">Enter your age</string>
+    <string name="firstName_en">Enter your first name</string>
+    <string name="phone_en">Enter your phone number</string>
+    <string name="email_en">Enter your email address</string>
+    <string name="skill_en">Enter your skill</string>
+    <string name="validate_en">Validate</string>
+    <string name="ageLabel_en">Age</string>
+    <string name="nameLabel_en">Name</string>
+    <string name="firstNameLabel_en">First name</string>
+    <string name="phoneLabel_en">Phone</string>
+    <string name="emailLabel_en">Email</string>
+    <string name="skillLabel_en">Skill</string>
+    <string name="Fr">Fr</string>
+    <string name="En">En</string>
+</resources>
