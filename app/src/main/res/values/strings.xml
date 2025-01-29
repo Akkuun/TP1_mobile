@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TP1_Mobile</string>
+    <string name="nom">Entrez votre nom</string>
+    <string name="age">Entrez votre age</string>
+    <string name="prenom">Entrez votre prénom</string>
+    <string name="telephone">Entrez votre numéro de téléphone</string>
+    <string name="email">Entrez votre adresse email</string>
+    <string name="competence">Entrez votre compétence</string>
+    <string name="valider">Valider</string>
+
+</resources>
