@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button goToTrainExemple;
 
+    private Button goToAgenda;
+
 
 
 
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         validateButton = findViewById(R.id.button);
         changeColorButton = findViewById(R.id.ChangeColor);
         goToTrainExemple = findViewById(R.id.train);
-
+        goToAgenda = findViewById(R.id.agenda);
         //log FrenchSelected
         System.out.println("FrenchSelected: " + FrenchSelected);
 
@@ -159,6 +161,11 @@ public class MainActivity extends AppCompatActivity {
 
         goToTrainExemple.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, trainExemple.class);
+            startActivity(intent);
+        });
+
+        goToAgenda.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, agendaExemple.class);
             startActivity(intent);
         });
     }

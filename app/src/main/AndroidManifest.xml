@@ -39,6 +39,10 @@
             android:exported="true">
         </activity>
 
+        <activity android:name=".agendaExemple"
+            android:exported="true">
+        </activity>
+
 
 
 

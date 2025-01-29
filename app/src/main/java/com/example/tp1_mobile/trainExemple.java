@@ -41,17 +41,14 @@ public class trainExemple extends AppCompatActivity {
 
 
 
-
+        // Search feature
         rechercher.setOnClickListener(v -> {
-
-
             //if the fields are empty, return
             if(depart.getText().toString().isEmpty() || destination.getText().toString().isEmpty()) return;
-            // Add fake data to the listview
+            //fake Data
             String[] TitleFakeData = {" Train 1 ", " Train 2 ", " Train 3 ", " Train 4 "};
             String[] SubtitleFakeData = {" Depart : 11:00 , Arrivee : 13:45 ", " Depart : 11:30 , Arrivee : 14:15 ", " Depart : 12:00 , Arrivee : 14:45 ", " Depart : 12:30 , Arrivee : 15:15 "};
-
-            // Create an adapter to display the data
+            // Create an ArrayAdapter from List to loop through the data
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text1, TitleFakeData) {
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
@@ -63,13 +60,10 @@ public class trainExemple extends AppCompatActivity {
                     return view;
                 }
             };
+            // Set the layout for the data
             adapter.setDropDownViewResource(android.R.layout.simple_list_item_2);
-// Set the adapter to the listview
+            // Set the adapter to the listview to display the data
             resultats.setAdapter(adapter);
-
-
-
-
         });
 
 
