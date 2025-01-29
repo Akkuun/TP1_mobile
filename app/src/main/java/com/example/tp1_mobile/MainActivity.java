@@ -1,5 +1,6 @@
 package com.example.tp1_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     //switch to change the language
     private Switch switchLanguage;
 
+    private boolean FrenchSelected;
+
     //label
     private TextView nameLabel;
     private TextView firstNameLabel;
@@ -35,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private  Button changeColorButton;
 
 
-    private boolean FrenchSelected = true;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,18 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
+        //button to validate the form and change the view to see the result
+        validateButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+            intent.putExtra("name", nameEditText.getText().toString());
+            intent.putExtra("firstName", firstNameEditText.getText().toString());
+            intent.putExtra("age", ageEditText.getText().toString());
+            intent.putExtra("skill", skillEditText.getText().toString());
+            intent.putExtra("phone", phoneEditText.getText().toString());
+            intent.putExtra("FrenchSelected", FrenchSelected);
+            startActivity(intent);
+                });
 
 
         //switch to change the language, we add a listener to change the text of the fields and the button
