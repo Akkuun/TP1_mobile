@@ -224,8 +224,10 @@
             android:text="Agenda"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.597"
             app:layout_constraintStart_toEndOf="@+id/train"
-            app:layout_constraintTop_toBottomOf="@+id/ChangeColor" />
+            app:layout_constraintTop_toBottomOf="@+id/ChangeColor"
+            app:layout_constraintVertical_bias="0.47" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
