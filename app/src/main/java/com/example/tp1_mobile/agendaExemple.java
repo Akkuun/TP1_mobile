@@ -2,6 +2,7 @@ package com.example.tp1_mobile;
 
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class agendaExemple extends AppCompatActivity {
     private EditText eventTitle;
     private List<String> events;
     private ArrayAdapter<String> adapter;
+    private String selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class agendaExemple extends AppCompatActivity {
         calendarView.setDate(System.currentTimeMillis(), false, true);
         eventTitle = findViewById(R.id.eventUserInput);
         eventTitle.setHint("Entrez l'intitulé de l'événement");
-
+        this.selectedDate = convertDate(System.currentTimeMillis());
         // Initialize event list and adapter
         events = new ArrayList<>();
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text1, events) {
@@ -59,16 +62,22 @@ public class agendaExemple extends AppCompatActivity {
         addEventButton.setOnClickListener(view -> {
             String event = eventTitle.getText().toString();
             if (!event.isEmpty()) {
-                long selectedDate = calendarView.getDate();
-                String formattedDate = convertDate(selectedDate);
-                events.add(event + " - Date: " + formattedDate);
+                events.add(event + " - Date: " + this.selectedDate);
                 adapter.notifyDataSetChanged();
                 eventTitle.setText("");
             }
         });
 
-    }
 
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(year, month, dayOfMonth);
+            long selectedDate = calendar.getTimeInMillis();
+            String formattedDate = convertDate(selectedDate);
+            this.selectedDate = formattedDate;
+        });
+
+    }
     public String convertDate(long timestamp) {
         Date date = new Date(timestamp);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
