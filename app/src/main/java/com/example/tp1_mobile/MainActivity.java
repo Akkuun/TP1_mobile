@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    //EXERCICE 4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         //log FrenchSelected
         System.out.println("FrenchSelected: " + FrenchSelected);
 
-
+        //EXERCICE 5
         changeColorButton.setOnClickListener(v -> {
             //loop of all text label and change their background color by a random color located in the colors.xml file
             //all the color from the color ressources
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
+        //EXERCICE 6 et 7
         //button to validate the form and change the view to see the result
         validateButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-
+        //EXERCICE 4
         //switch to change the language, we add a listener to change the text of the fields and the button
         switchLanguage = findViewById(R.id.switchLangage);
         switchLanguage.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -151,19 +151,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-
+        //EXERCICE 8
         goToTrainExemple.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, trainExemple.class);
             startActivity(intent);
         });
 
+        //EXERCICE 9
         goToAgenda.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, agendaExemple.class);
             startActivity(intent);

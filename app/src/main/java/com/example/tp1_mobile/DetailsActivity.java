@@ -70,7 +70,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         //button for go back
         findViewById(R.id.goBack).setOnClickListener(v -> finish());
-
+        //EXERCICE 7
         //button for open an another activity
         call.setOnClickListener(v -> {
             Intent intent = new Intent(DetailsActivity.this, imagePageActivity.class);
