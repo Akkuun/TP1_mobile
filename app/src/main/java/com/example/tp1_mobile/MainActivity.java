@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
 /* CODE JAVA EX3
-package com.example.myapp;
+package com.example.tp1_mobile;
 
 import android.os.Bundle;
 import android.view.View;
@@ -309,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
         firstNameLabel.setLayoutParams(firstNameLabelParams);
         mainLayout.addView(firstNameLabel);
 
-        // You can follow the same steps to add the other TextViews for labels and set their positions similarly.
+
 
         setContentView(mainLayout); // Set the main layout as the activity content
     }
